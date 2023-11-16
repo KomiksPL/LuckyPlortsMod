@@ -8,7 +8,7 @@ using UnityEngine;
 using UnityEngine.Localization;
 using UnityEngine.Localization.Tables;
 using Object = UnityEngine.Object;
-[assembly: MelonInfo(typeof(EntryPoint), "LuckyPlorts", "1.0.4", "KomiksPL", "https://www.nexusmods.com/slimerancher2/mods/13")]
+[assembly: MelonInfo(typeof(EntryPoint), "LuckyPlorts", "1.0.5", "KomiksPL", "https://www.nexusmods.com/slimerancher2/mods/13")]
 
 namespace LuckyPlorts
 {
