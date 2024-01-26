@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using Object = UnityEngine.Object;
 
-namespace LuckyPlorts
+namespace LuckyPlortsMod
 {
     public static class PrefabUtils
     {

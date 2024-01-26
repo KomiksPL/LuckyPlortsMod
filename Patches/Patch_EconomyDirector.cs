@@ -1,7 +1,7 @@
 ﻿using HarmonyLib;
 using Il2Cpp;
 
-namespace LuckyPlorts.Patches;
+namespace LuckyPlortsMod.Patches;
 
 
 [HarmonyPatch(typeof(EconomyDirector))]

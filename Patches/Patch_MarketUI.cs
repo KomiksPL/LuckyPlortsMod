@@ -1,8 +1,7 @@
 ﻿using HarmonyLib;
 using Il2CppMonomiPark.SlimeRancher.UI;
-using CollectionExtensions = System.Collections.Generic.CollectionExtensions;
 
-namespace LuckyPlorts.Patches;
+namespace LuckyPlortsMod.Patches;
 
 [HarmonyPatch(typeof(MarketUI))]
 public static class Patch_MarketUI

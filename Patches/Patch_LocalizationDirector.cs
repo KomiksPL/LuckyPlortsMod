@@ -4,7 +4,7 @@ using Il2CppMonomiPark.SlimeRancher.UI.Localization;
 using MelonLoader;
 using UnityEngine;
 
-namespace LuckyPlorts
+namespace LuckyPlortsMod.Patches
 {
     [HarmonyPatch(typeof(LocalizationDirector))]
     public static class Patch_LocalizationDirector

@@ -1,7 +1,7 @@
 ﻿using HarmonyLib;
 using MelonLoader;
 
-namespace LuckyPlorts.Patches;
+namespace LuckyPlortsMod.Patches;
 
 [HarmonyPatch("Il2CppInterop.HarmonySupport.Il2CppDetourMethodPatcher", "ReportException")]
 public static class Patch_Il2CppDetourMethodPatcher

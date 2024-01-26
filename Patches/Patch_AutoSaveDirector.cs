@@ -2,7 +2,7 @@
 using Il2Cpp;
 using UnityEngine;
 
-namespace LuckyPlorts.Patches;
+namespace LuckyPlortsMod.Patches;
 
 [HarmonyPatch(typeof(AutoSaveDirector))]
 public class Patch_AutoSaveDirector

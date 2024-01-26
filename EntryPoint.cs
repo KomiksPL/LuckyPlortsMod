@@ -1,16 +1,14 @@
-﻿using System;
-using System.IO;
-using Il2Cpp;
+﻿using Il2Cpp;
 using Il2CppInterop.Runtime;
-using LuckyPlorts;
+using LuckyPlortsMod;
 using MelonLoader;
 using UnityEngine;
 using UnityEngine.Localization;
 using UnityEngine.Localization.Tables;
 using Object = UnityEngine.Object;
-[assembly: MelonInfo(typeof(EntryPoint), "LuckyPlorts", "1.0.5", "KomiksPL", "https://www.nexusmods.com/slimerancher2/mods/13")]
+[assembly: MelonInfo(typeof(EntryPoint), "LuckyPlortsMod", "1.0.5", "KomiksPL", "https://www.nexusmods.com/slimerancher2/mods/13")]
 
-namespace LuckyPlorts
+namespace LuckyPlortsMod
 {
     public class EntryPoint : MelonMod
     {
@@ -44,17 +42,13 @@ namespace LuckyPlorts
 
         public override void OnInitializeMelon()
         {
-            foreach (var patchedMethod in HarmonyInstance.GetPatchedMethods())
-            {
-                MelonLogger.Msg(patchedMethod.ToString());
-            }
             LuckyPlort = ScriptableObject.CreateInstance<IdentifiableType>();
             LuckyPlort.hideFlags |= HideFlags.HideAndDontSave;
             LuckyPlort.name = "LuckyPlort";
             LuckyPlort.localizationSuffix = "lucky_plort";
 
             // Load the icon texture
-            using (Stream iconStream = MelonAssembly.Assembly.GetManifestResourceStream("LuckyPlorts.plortLucky.png"))
+            using (Stream iconStream = MelonAssembly.Assembly.GetManifestResourceStream("LuckyPlortsMod.plortLucky.png"))
             {
                 Texture2D iconTexture = new Texture2D(1, 1);
                 byte[] iconBytes = new byte[iconStream.Length];
@@ -67,7 +61,7 @@ namespace LuckyPlorts
             }
 
             // Load the asset bundle
-            using (Stream bundleStream = MelonAssembly.Assembly.GetManifestResourceStream("LuckyPlorts.plortLuckyObj"))
+            using (Stream bundleStream = MelonAssembly.Assembly.GetManifestResourceStream("LuckyPlortsMod.plortLuckyObj"))
             {
                 byte[] bundleBytes = new byte[bundleStream.Length];
                 bundleStream.Read(bundleBytes, 0, bundleBytes.Length);
