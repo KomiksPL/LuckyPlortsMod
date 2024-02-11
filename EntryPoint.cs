@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.Localization;
 using UnityEngine.Localization.Tables;
 using Object = UnityEngine.Object;
-[assembly: MelonInfo(typeof(EntryPoint), "LuckyPlortsMod", "1.0.5", "KomiksPL", "https://www.nexusmods.com/slimerancher2/mods/13")]
+[assembly: MelonInfo(typeof(EntryPoint), "LuckyPlortsMod", "1.0.6", "KomiksPL", "https://www.nexusmods.com/slimerancher2/mods/13")]
 
 namespace LuckyPlortsMod
 {
@@ -45,7 +45,6 @@ namespace LuckyPlortsMod
             LuckyPlort = ScriptableObject.CreateInstance<IdentifiableType>();
             LuckyPlort.hideFlags |= HideFlags.HideAndDontSave;
             LuckyPlort.name = "LuckyPlort";
-            LuckyPlort.localizationSuffix = "lucky_plort";
 
             // Load the icon texture
             using (Stream iconStream = MelonAssembly.Assembly.GetManifestResourceStream("LuckyPlortsMod.plortLucky.png"))
