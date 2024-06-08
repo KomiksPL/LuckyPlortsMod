@@ -1,12 +1,35 @@
-﻿using Il2Cpp;
+﻿using System.Collections;
+using System.Reflection;
+using HarmonyLib;
+using Il2Cpp;
+using Il2CppInterop.Common.XrefScans;
 using Il2CppInterop.Runtime;
+using Il2CppInterop.Runtime.Attributes;
+using Il2CppInterop.Runtime.Injection;
+using Il2CppInterop.Runtime.InteropTypes;
+using Il2CppInterop.Runtime.XrefScans;
+using Il2CppMonomiPark.SlimeRancher.Event.Query;
+using Il2CppMonomiPark.SlimeRancher.Shop;
+using Il2CppMonomiPark.SlimeRancher.Shop.Runtime;
+using Il2CppSystem.IO;
+using Il2CppSystem.Resources;
 using LuckyPlortsMod;
 using MelonLoader;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
+using UnityEngine.AddressableAssets.ResourceLocators;
+using UnityEngine.Experimental.AssetBundlePatching;
 using UnityEngine.Localization;
 using UnityEngine.Localization.Tables;
+using UnityEngine.ResourceManagement.AsyncOperations;
+using UnityEngine.ResourceManagement.ResourceLocations;
+using UnityEngine.ResourceManagement.ResourceProviders;
 using Object = UnityEngine.Object;
-[assembly: MelonInfo(typeof(EntryPoint), "LuckyPlortsMod", "1.0.6", "KomiksPL", "https://www.nexusmods.com/slimerancher2/mods/13")]
+using ResourceManager = UnityEngine.ResourceManagement.ResourceManager;
+using Stream = System.IO.Stream;
+using Type = Il2CppSystem.Type;
+
+[assembly: MelonInfo(typeof(EntryPoint), "LuckyPlortsMod", "1.0.7", "KomiksPL", "https://www.nexusmods.com/slimerancher2/mods/13")]
 
 namespace LuckyPlortsMod
 {
@@ -14,7 +37,6 @@ namespace LuckyPlortsMod
     {
         public static IdentifiableType LuckyPlort;
         public static AssetBundle luckyPlort;
-
         public static Sprite ConvertTextureToSprite(Texture2D texture2D)
         {
             return Sprite.Create(texture2D, new Rect(0f, 0f, texture2D.width, texture2D.height), new Vector2(0.5f, 0.5f), 100f);
@@ -71,6 +93,7 @@ namespace LuckyPlortsMod
         {
             return Resources.FindObjectsOfTypeAll<T>().FirstOrDefault((T x) => x.name == name);
         }
+        
         public override void OnSceneWasLoaded(int buildIndex, string sceneName)
         {
             if (!sceneName.Equals("GameCore")) return;
